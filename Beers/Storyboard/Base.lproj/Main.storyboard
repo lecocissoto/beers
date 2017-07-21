@@ -74,9 +74,34 @@
                             <outlet property="delegate" destination="YlQ-c2-axS" id="FBY-wb-GiO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Beers" id="aZC-v5-VwG"/>
+                    <navigationItem key="navigationItem" title="Beers" id="aZC-v5-VwG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3uz-ZQ-Yvj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="spinnerView" destination="715-Xb-rdA" id="8yW-Ed-YxM"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kh-sb-o9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view alpha="0.5" contentMode="scaleToFill" id="715-Xb-rdA" customClass="SpinnerView" customModule="Beers" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-wE-MVN">
+                            <rect key="frame" x="40" y="40" width="20" height="20"/>
+                            <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="XfC-wE-MVN" firstAttribute="centerY" secondItem="715-Xb-rdA" secondAttribute="centerY" id="3Zf-7q-36E"/>
+                        <constraint firstItem="XfC-wE-MVN" firstAttribute="centerX" secondItem="715-Xb-rdA" secondAttribute="centerX" id="AyN-LO-zrq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
             <point key="canvasLocation" x="1080.5" y="115.5"/>
         </scene>
@@ -177,6 +202,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dqk-xD-kUY" secondAttribute="trailing" id="Zuj-eE-rzX"/>
                             <constraint firstItem="wtY-ea-eKa" firstAttribute="top" secondItem="dqk-xD-kUY" secondAttribute="bottom" id="kCi-db-kKR"/>
@@ -205,6 +231,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pdT-lb-Fdg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.63917824069999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
