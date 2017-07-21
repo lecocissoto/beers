@@ -15,6 +15,10 @@ class Requester {
     var env: String
     var version: String
     
+    //Type Alias
+    typealias SuccessCallback = (_ message: String, _ beers:[Beer])->()
+    typealias FailureCallback = (_ error: BeerErrors, _ message: String)->()
+    
     init(env: String, version: String){
         self.env     = env
         self.version = version

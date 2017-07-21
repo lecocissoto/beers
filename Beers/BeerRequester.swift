@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class BeerRequester: Requester{
-    
-    func beers(){
+    func beers(page: Int = 1, success: SuccessCallback, failure: FailureCallback){
+        
         
     }
     

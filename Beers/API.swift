@@ -13,11 +13,11 @@ class API{
     var env: String
     var version : String
     
-    enum Enviroment: String{
+    public enum Enviroment: String{
         case production = "https://api.punkapi.com"
     }
     
-    enum Version: String{
+    public enum Version: String{
         case v2 = "/v2"
     }
     
@@ -25,5 +25,8 @@ class API{
         self.env     = env.rawValue
         self.version = version.rawValue
     }
+    
+    
+    
     
 }
