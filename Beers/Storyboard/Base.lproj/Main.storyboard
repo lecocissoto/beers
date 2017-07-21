@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Beer ListCVC-->
+        <!--Beers-->
         <scene sceneID="eUc-aQ-k5h">
             <objects>
                 <collectionViewController id="YlQ-c2-axS" customClass="BeerListCVC" customModule="Beers" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,20 +19,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fie-jT-YxZ">
-                            <size key="itemSize" width="159" height="217"/>
+                            <size key="itemSize" width="200" height="278"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeerCVCell" id="aqU-A8-lu6">
-                                <rect key="frame" x="0.0" y="0.0" width="159" height="217"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeerCVCell" id="aqU-A8-lu6" customClass="BeerCVCell" customModule="Beers" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="278"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="159" height="217"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="278"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWQ-gm-UOo">
+                                            <rect key="frame" x="8" y="8" width="184" height="212"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR8-jY-d8V">
+                                            <rect key="frame" x="8" y="228" width="176" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xn-hr-Jdq">
+                                            <rect key="frame" x="8" y="254" width="184" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="xR8-jY-d8V" secondAttribute="trailing" constant="8" id="1Jp-xk-MQB"/>
+                                    <constraint firstItem="0Xn-hr-Jdq" firstAttribute="top" secondItem="xR8-jY-d8V" secondAttribute="bottom" constant="8" id="1UZ-el-MG2"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Xn-hr-Jdq" secondAttribute="trailing" constant="8" id="20g-cE-3sn"/>
+                                    <constraint firstItem="bWQ-gm-UOo" firstAttribute="leading" secondItem="aqU-A8-lu6" secondAttribute="leading" constant="8" id="9LM-wu-cHU"/>
+                                    <constraint firstItem="xR8-jY-d8V" firstAttribute="top" secondItem="bWQ-gm-UOo" secondAttribute="bottom" constant="8" id="Cha-dp-ewF"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Xn-hr-Jdq" secondAttribute="bottom" constant="8" id="SRA-Fc-p8i"/>
+                                    <constraint firstAttribute="trailing" secondItem="bWQ-gm-UOo" secondAttribute="trailing" constant="8" id="aTb-4n-q7i"/>
+                                    <constraint firstItem="xR8-jY-d8V" firstAttribute="leading" secondItem="bWQ-gm-UOo" secondAttribute="leading" id="bhT-dw-pOj"/>
+                                    <constraint firstItem="bWQ-gm-UOo" firstAttribute="top" secondItem="aqU-A8-lu6" secondAttribute="top" constant="8" id="nKU-Ob-iBh"/>
+                                    <constraint firstItem="0Xn-hr-Jdq" firstAttribute="leading" secondItem="xR8-jY-d8V" secondAttribute="leading" id="sHx-XB-Ply"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="abvLbl" destination="0Xn-hr-Jdq" id="Ckl-E7-XjL"/>
+                                    <outlet property="nameLbl" destination="xR8-jY-d8V" id="sxM-5O-pAB"/>
+                                    <outlet property="photoImageView" destination="bWQ-gm-UOo" id="CP5-er-VhJ"/>
                                     <segue destination="LVm-h9-gW6" kind="show" id="aLU-DU-HWJ"/>
                                 </connections>
                             </collectionViewCell>
@@ -41,11 +74,11 @@
                             <outlet property="delegate" destination="YlQ-c2-axS" id="FBY-wb-GiO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="aZC-v5-VwG"/>
+                    <navigationItem key="navigationItem" title="Beers" id="aZC-v5-VwG"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kh-sb-o9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1080.5" y="115.5"/>
         </scene>
         <!--Beer DetailsVC-->
         <scene sceneID="0qi-hD-cNy">
@@ -84,6 +117,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pdT-lb-Fdg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.63917824069999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
