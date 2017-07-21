@@ -1,4 +1,8 @@
-# Beers
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/lecocissoto/beers/master/images/logo-beers.png" alt="Beers" title="Beers" width="557"/>
+
+</p>
 
 ---
 
@@ -6,8 +10,8 @@ Beers is an iOS application based on the [PUNK API][punk-api] to give a list of 
 
 ## Requirements
 
--
-- ** New ** Swift 4
+- ** Swift 4 **
+- XCode 9
 
 ## Third Party Libraries
 
@@ -24,6 +28,8 @@ To install, just clone the project and init the submodule running `git submodule
 
 - Add Unit Tests and UITests.
 - Add Swift Package Manager to deal with dependencies.
+- Extract the UIAlertController.
+- Add pagination do list all the beers.
 - Add to favorites feature.
 
 [punk-api]: https://punkapi.com/documentation/v2
