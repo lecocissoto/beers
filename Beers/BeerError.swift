@@ -15,13 +15,11 @@ enum BeerErrors{
     case invalidParameter
 }
 
-struct BeersErrorHandler{
-    enum ErrorMessages: String{
-        case withoutInternet  = "Sem conexão com Internet. Espero que você esteja em um bar."
-        case serverProblem    = "Estamos em manutenção. Tome uma gelada enquanto isso"
-        case parseError       = "Problemas no aplicativo para transformar sua cerveja em objeto."
-        case invalidParameter = "Ops, o que está tentando passar?"
-    }
+enum ErrorMessages: String{
+    case withoutInternet  = "Sem conexão com Internet. Espero que você esteja em um bar."
+    case serverProblem    = "Estamos em manutenção. Tome uma gelada enquanto isso"
+    case parseError       = "Problemas no aplicativo para transformar sua cerveja em objeto."
+    case invalidParameter = "Ops, o que está tentando passar?"
     
     static func getErrorMessage(error: BeerErrors)->String{
         let message: String!
@@ -39,4 +37,6 @@ struct BeersErrorHandler{
         
         return message
     }
+    
 }
+

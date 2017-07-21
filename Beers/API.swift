@@ -26,6 +26,15 @@ class API{
         self.version = version.rawValue
     }
     
+    // Creating a lazy var 
+    fileprivate var _beerService: BeerRequester?
+    open var beerService: BeerRequester {
+        if _beerService == nil {
+            _beerService = BeerRequester(env: env, version: version)
+        }
+        return _beerService!
+    }
+    
     
     
     

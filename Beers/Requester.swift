@@ -19,8 +19,16 @@ class Requester {
     typealias SuccessCallback = (_ message: String, _ beers:[Beer])->()
     typealias FailureCallback = (_ error: BeerErrors, _ message: String)->()
     
+    // Initialize variables
     init(env: String, version: String){
         self.env     = env
         self.version = version
+    }
+    
+    //Just to compose the url and make this part testable
+    func URLComposer(using endpoint: String)->String{
+        let url = "\(env)\(version)\(endpoint)"
+        print(url)
+        return url
     }
 }

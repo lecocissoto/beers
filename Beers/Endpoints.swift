@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+// This could be an enum too
 struct Endpoints{
     
     // Type alias to make things readable
