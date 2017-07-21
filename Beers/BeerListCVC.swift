@@ -25,6 +25,7 @@ class BeerListCVC: UICollectionViewController {
         didSet{ self.collectionView?.reloadData() }
     }
     
+    // Load Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         requestForBeers()
@@ -33,7 +34,8 @@ class BeerListCVC: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    // Request Helpers
     private func requestForBeers(){
         isLoading = true
         API(env: .production, version: .v2).beerService.beers(success: { (msg, beers) in
