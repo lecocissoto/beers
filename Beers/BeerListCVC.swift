@@ -16,8 +16,6 @@ class BeerListCVC: UICollectionViewController {
         didSet{ self.collectionView?.reloadData() }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         API(env: .production, version: .v2).beerService.beers(success: { (msg, beers) in
@@ -36,15 +34,19 @@ class BeerListCVC: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "beerDetailsSegue"{
+            let nextVC = segue.destination as! BeerDetailsVC
+            let indexPath = collectionView!.indexPathsForSelectedItems![0]
+            
+            nextVC.beer = beers[indexPath.row]
+        }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
